@@ -29,11 +29,11 @@ extension ViewController {
 //            
             
             middleStackView.topAnchor.constraint(equalTo: headerStackView.bottomAnchor),
-            middleStackView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            middleStackView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            middleStackView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            middleStackView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             middleStackView.heightAnchor.constraint(equalToConstant: 100),
             
-            pickerView.heightAnchor.constraint(equalToConstant: 100),
+            pickerView.heightAnchor.constraint(equalToConstant: 216),
             pickerView.widthAnchor.constraint(equalTo: view.widthAnchor),
             pickerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         

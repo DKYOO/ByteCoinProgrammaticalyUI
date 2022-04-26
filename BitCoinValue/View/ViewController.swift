@@ -7,11 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+	
+	
+
+	//MARK: UI Elements
+	
     let labelHeader: UILabel = {
         let label = UILabel()
-//        label.font = UIFont(name: "System", size: 50)
 		label.font = UIFont.boldSystemFont(ofSize: 50.0)
         label.text = "ByteCoin"
 		label.textAlignment = .center
@@ -31,7 +34,7 @@ class ViewController: UIViewController {
     
     let imageToStack: UIImageView = {
         let imageView = UIImageView()
-		let config = UIImage.SymbolConfiguration(pointSize: 70)
+		let config = UIImage.SymbolConfiguration(pointSize: 50)
 		imageView.image = UIImage(systemName: "bitcoinsign.circle.fill", withConfiguration: config)
 		imageView.tintColor = .white
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +43,7 @@ class ViewController: UIViewController {
     
     let labelToStack: UILabel = {
         let label = UILabel()
-		label.font = UIFont.systemFont(ofSize: 30)
+		label.font = UIFont.systemFont(ofSize: 20)
 		label.textColor = .white
 		label.alpha = 0.9
 		label.text = "Hello"
@@ -51,7 +54,7 @@ class ViewController: UIViewController {
     
     let currencyLabelToStack: UILabel = {
         let label = UILabel()
-		label.font = UIFont.systemFont(ofSize: 30)
+		label.font = UIFont.systemFont(ofSize: 20)
 		label.textColor = .white
 		label.alpha = 0.9
 		label.text = "Rubble Bubble"
@@ -64,7 +67,10 @@ class ViewController: UIViewController {
         stackView.axis = NSLayoutConstraint.Axis.horizontal
         stackView.distribution = UIStackView.Distribution.equalSpacing
         stackView.alignment = UIStackView.Alignment.center
-        stackView.spacing = 16.0
+        stackView.spacing = 10.0
+		stackView.backgroundColor = .lightGray
+		stackView.alpha = 0.8
+		stackView.layer.cornerRadius = 11.72
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         //MARK: TODO
@@ -75,11 +81,10 @@ class ViewController: UIViewController {
         return stackView
     }()
     
-    
-    //    self.view.addSubview(middleStackView)
-    
     let pickerView: UIPickerView = {
         let picker = UIPickerView()
+		picker.layer.cornerRadius = 11.72
+		picker.alpha = 1
         picker.translatesAutoresizingMaskIntoConstraints = false
         return picker
     }()
@@ -94,6 +99,9 @@ class ViewController: UIViewController {
         configureHeaderStackView()
 		configureMiddleStackView()
 		
+		//set the ViewController class as the datasource to the currencyPicker object.
+		pickerView.dataSource = self
+		pickerView.delegate = self
         
     }
     
@@ -110,6 +118,29 @@ class ViewController: UIViewController {
 		middleStackView.addArrangedSubview(labelToStack)
 		middleStackView.addArrangedSubview(currencyLabelToStack)
 	}
+	
+	//PickerView Settings
+	
+	func numberOfComponents(in pickerView: UIPickerView) -> Int {
+		return 1;
+	}
+	
+	let coinManager = CoinManager()
+	
+	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		return coinManager.currencyArray.count;
+	}
+	 // creating number of elenets in picker view
+	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+		return coinManager.currencyArray[row]
+	}
+	
+	// create connection with selection in picker view
+	
+	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+		print (coinManager.currencyArray[row])
+	}
+	
 	
 	
     
