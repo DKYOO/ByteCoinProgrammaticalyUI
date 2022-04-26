@@ -23,10 +23,10 @@ extension ViewController {
 //            labelHeader.leftAnchor.constraint(equalTo: headerStackView.leftAnchor, constant: 100),
 //            labelHeader.rightAnchor.constraint(equalTo: headerStackView.rightAnchor),
 //            labelHeader.bottomAnchor.constraint(equalTo: headerStackView.bottomAnchor),
-            
-            labelHeader.widthAnchor.constraint(equalToConstant: 60),
-            labelHeader.heightAnchor.constraint(equalToConstant: 230),
-            
+//            
+//            labelHeader.widthAnchor.constraint(equalToConstant: 60),
+//            labelHeader.heightAnchor.constraint(equalToConstant: 230),
+//            
             
             middleStackView.topAnchor.constraint(equalTo: headerStackView.bottomAnchor),
             middleStackView.leftAnchor.constraint(equalTo: view.leftAnchor),

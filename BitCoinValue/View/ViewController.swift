@@ -31,15 +31,18 @@ class ViewController: UIViewController {
     
     let imageToStack: UIImageView = {
         let imageView = UIImageView()
-//        imageView.image = UIImage(systemName: "bitcoinsign.circle.fill")
-		imageView.image = UIImage(systemName: "bitcoinsign.circle.fill")
-		imageView.image = UIImage(systemName: <#T##String#>, withConfiguration: <#T##UIImage.Configuration?#>)
+		let config = UIImage.SymbolConfiguration(pointSize: 70)
+		imageView.image = UIImage(systemName: "bitcoinsign.circle.fill", withConfiguration: config)
+		imageView.tintColor = .white
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     let labelToStack: UILabel = {
         let label = UILabel()
+		label.font = UIFont.systemFont(ofSize: 30)
+		label.textColor = .white
+		label.alpha = 0.9
 		label.text = "Hello"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -48,7 +51,9 @@ class ViewController: UIViewController {
     
     let currencyLabelToStack: UILabel = {
         let label = UILabel()
-		label.font = UIFont(name: "System", size: 30)
+		label.font = UIFont.systemFont(ofSize: 30)
+		label.textColor = .white
+		label.alpha = 0.9
 		label.text = "Rubble Bubble"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -96,10 +101,6 @@ class ViewController: UIViewController {
     //MARK: - Methods vs Logic
     
 	func configureHeaderStackView() {
-//		NSLayoutConstraint.activate([
-//		labelHeader.widthAnchor.constraint(equalToConstant: 230),
-//		labelHeader.heightAnchor.constraint(equalToConstant: 60)
-//		])
 		headerStackView.addArrangedSubview(labelHeader)
 		
 	}
