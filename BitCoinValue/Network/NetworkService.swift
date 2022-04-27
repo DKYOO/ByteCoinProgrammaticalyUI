@@ -7,4 +7,13 @@
 
 import Foundation
 
-
+class NetworkService: NetworkServiceProtocol {
+    
+    func getData() {
+        <#code#>
+    }
+    
+    func performRequest(with urlString: String) {
+        <#code#>
+    }
+}
