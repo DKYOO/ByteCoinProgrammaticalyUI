@@ -9,7 +9,10 @@ import Foundation
 import UIKit
 
 protocol CoinManagerDelegate {
-	 func getLastPrice()
+	func getCurrencyTitle(model: NetworkingModel)
+	func getBitcoinValue(model: NetworkingModel)
+	func didFailWithError(error: Error)
+	
 }
 
 struct CoinManager {
@@ -45,26 +48,38 @@ struct CoinManager {
 					return
 				}
 				if let safeData = data {
-					let bitcoinPrice = self.parseJSON(safeData)
+					if let bitcoinPrice = self.parseJSON(safeData) {
+						delegate?.getBitcoinValue(model: bitcoinPrice)
+						delegate?.getCurrencyTitle(model: bitcoinPrice)
+					}
 				}
 			}
 			task.resume()
 		}
 	}
 	
-	func parseJSON(_ data: Data) -> Double?  {
+	func parseJSON(_ data: Data) -> NetworkingModel?  {
 		let decoder = JSONDecoder()
 		
 		do {
 			let decodedData = try decoder.decode(NetworkingModel.self, from: data)
+			let currency = decodedData.asset_id_quote
+			let value = decodedData.asset_id_base
 			let lastPrice = decodedData.rate
-			print(lastPrice)
-			return lastPrice
+			
+			
+			let datas = NetworkingModel(asset_id_base: currency, asset_id_quote: value, rate: lastPrice)
+			
+			return datas
+//			print(lastPrice)
+//			return lastPrice
 		} catch {
+			delegate?.didFailWithError(error: error)
 			print (error)
 			return nil
 		}
 	}
+	
 }
 
 

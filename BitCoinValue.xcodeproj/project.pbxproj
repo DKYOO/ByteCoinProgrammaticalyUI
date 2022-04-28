@@ -19,6 +19,7 @@
 		3257B1F5281962E300C0676E /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257B1F4281962E300C0676E /* NetworkServiceProtocol.swift */; };
 		32D2D75628171BC800BC9B45 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D2D75528171BC800BC9B45 /* UIViewExtensions.swift */; };
 		32D2D75828171EE000BC9B45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32D2D75728171EE000BC9B45 /* Assets.xcassets */; };
+		32E0A8C8281B1E4E00CCB522 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E0A8C7281B1E4E00CCB522 /* ViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		3257B1F4281962E300C0676E /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		32D2D75528171BC800BC9B45 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		32D2D75728171EE000BC9B45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32E0A8C7281B1E4E00CCB522 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				321E455A280B429F00A1D9FF /* ViewController.swift */,
+				32E0A8C7281B1E4E00CCB522 /* ViewControllerExtension.swift */,
 				321E4578280B679600A1D9FF /* Constraints.swift */,
 				32D2D75528171BC800BC9B45 /* UIViewExtensions.swift */,
 				321E457A280B686900A1D9FF /* KeyboardTricks.swift */,
@@ -202,6 +205,7 @@
 				3257B1F5281962E300C0676E /* NetworkServiceProtocol.swift in Sources */,
 				3257B1F3281954BF00C0676E /* NetworkService.swift in Sources */,
 				321E455B280B429F00A1D9FF /* ViewController.swift in Sources */,
+				32E0A8C8281B1E4E00CCB522 /* ViewControllerExtension.swift in Sources */,
 				321E4579280B679600A1D9FF /* Constraints.swift in Sources */,
 				321E4557280B429F00A1D9FF /* AppDelegate.swift in Sources */,
 				321E4559280B429F00A1D9FF /* SceneDelegate.swift in Sources */,

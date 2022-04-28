@@ -100,6 +100,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 		configureMiddleStackView()
 		
 		//set the ViewController class as the datasource to the currencyPicker object.
+		coinManager.delegate = self
 		pickerView.dataSource = self
 		pickerView.delegate = self
         
@@ -125,12 +126,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 		return 1;
 	}
 	
-	let coinManager = CoinManager()
+	var coinManager = CoinManager()
 	
 	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
 		return coinManager.currencyArray.count;
 	}
-	 // creating number of elenets in picker view
+	 // creating number of elemets in picker view
 	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 		return coinManager.currencyArray[row]
 	}
