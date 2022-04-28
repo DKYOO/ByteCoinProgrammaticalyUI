@@ -9,7 +9,7 @@ import Foundation
 
 protocol NetworkServiceProtocol {
     //MARK: Hello
-    func getData()
+    
     func performRequest(with urlString: String)
     
 }
