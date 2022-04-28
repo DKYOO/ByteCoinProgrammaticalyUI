@@ -16,7 +16,7 @@ struct NetworkingModel: Decodable {
     //value crypto->currency
     var rate: Double
     //poxui
-    var src_side_base: BullShitModel?
+    var src_side_base: [BullShitModel]?
 }
 
 struct BullShitModel: Decodable {

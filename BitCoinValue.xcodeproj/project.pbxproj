@@ -74,7 +74,6 @@
 				321E4571280B5FB800A1D9FF /* ViewModel */,
 				321E4564280B42A100A1D9FF /* Info.plist */,
 				32D2D75728171EE000BC9B45 /* Assets.xcassets */,
-				321E4576280B605100A1D9FF /* CoinManager.swift */,
 				3257B1EF2819543B00C0676E /* Network */,
 			);
 			path = BitCoinValue;
@@ -118,6 +117,7 @@
 		3257B1EF2819543B00C0676E /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				321E4576280B605100A1D9FF /* CoinManager.swift */,
 				3257B1F02819545800C0676E /* NetworkingModel.swift */,
 				3257B1F2281954BF00C0676E /* NetworkService.swift */,
 				3257B1F4281962E300C0676E /* NetworkServiceProtocol.swift */,

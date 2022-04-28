@@ -144,6 +144,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 		
 	}
 	
+//	func getLastPrice(for: selectedCurrency) {
+//
+//	}
+	
 	
 	
 	
