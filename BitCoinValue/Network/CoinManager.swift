@@ -71,8 +71,7 @@ struct CoinManager {
 			let datas = NetworkingModel(asset_id_base: currency, asset_id_quote: value, rate: lastPrice)
 			
 			return datas
-//			print(lastPrice)
-//			return lastPrice
+			
 		} catch {
 			delegate?.didFailWithError(error: error)
 			print (error)

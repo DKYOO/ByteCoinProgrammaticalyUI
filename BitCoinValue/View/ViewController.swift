@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ViewController: UIViewController {
 	
 	
 
@@ -88,6 +88,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         picker.translatesAutoresizingMaskIntoConstraints = false
         return picker
     }()
+	
+	var coinManager = CoinManager()
     
     //MARK: - LifeCycle
     
@@ -106,7 +108,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
     }
     
-    
     //MARK: - Methods vs Logic
     
 	func configureHeaderStackView() {
@@ -119,40 +120,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 		middleStackView.addArrangedSubview(labelToStack)
 		middleStackView.addArrangedSubview(currencyLabelToStack)
 	}
-	
-	//PickerView Settings
-	
-	func numberOfComponents(in pickerView: UIPickerView) -> Int {
-		return 1;
-	}
-	
-	var coinManager = CoinManager()
-	
-	func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-		return coinManager.currencyArray.count;
-	}
-	 // creating number of elemets in picker view
-	func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-		return coinManager.currencyArray[row]
-	}
-	
-	// create connection with selection in picker view
-	
-	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//		print (coinManager.currencyArray[row])
-		let selectedCurrency = coinManager.currencyArray[row]
-		coinManager.getCoinPrice(for: selectedCurrency)
-		
-	}
-	
-//	func getLastPrice(for: selectedCurrency) {
-//
-//	}
-	
-	
-	
-	
-	
-    
+
 }
 
